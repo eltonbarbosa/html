@@ -1,0 +1,204 @@
+/*Resets auxiliares*/
+/*Resets*/
+html, body, div, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, ol, ul, li, form, fieldset, legend, label, table, header, footer, nav, section,figure { 
+	margin: 0; 
+	padding: 0;
+	border: 0
+}
+
+ul,ol{
+    list-style: none
+}
+
+/*o width dos elementos agora será a soma do conteúdo com a borda e o padding.*/
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+/*Fim resets*/
+
+/*Clear fix, Importante para ajudar nos problemas com float
+https://css-tricks.com/snippets/css/clear-fix/
+*/
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+}
+.clearfix { display: inline-block; }
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/*Fim clearfix*/
+
+/*Estilo geral*/
+html{
+    font-family: Arial, Helvetica, sans-serif;
+    /*font-size: 18px;*/
+    font-size: 1.125em;/*18 / 16*/
+}
+
+p{
+    /*font-size: 16px;*/
+    font-size: 0.8888em; /*16 / 18*/;
+}
+
+a{
+    text-decoration: none
+}
+
+.currentContent{
+    /*border-bottom: 2px solid red;*/
+    /*Configurando a borda para ser relativo ao font size*/
+    border-bottom: 0.1111em solid red;/*2 / 18*/
+}
+
+/*Fim estilo geral*/
+
+/*Layout*/
+body{
+    background-color: #fff;
+    /*width: 980px;*/
+    /*Considerando 980 como 100%*/
+    width: 100%; /* 980 / 980*/
+    margin: 0 auto
+}
+
+img{
+    max-width: 100%
+}
+
+#header{
+    /*height: 65px;*/
+    /*Configurando o height para aumentar de acordo com conteúdo*/
+    height:auto
+}
+
+#content section{
+    /*padding: 100px 0;*/
+    padding: 5.5555em 0;/* 100 / 18*/
+}
+
+#header,#footer{
+    background-color: #4A148C;
+    color: #fff;
+}
+
+#header{
+   /*width: 980px;*/
+   width: 100%;/* 980 / 980*/
+   position: fixed;
+   z-index: 100;
+   top: 0
+}
+
+#header h1{
+    float: left;
+    /*padding: 12px;*/
+    padding: 0.6666em;/*12 / 18*/
+}
+
+#main-nav{
+    float: right;
+    /*padding: 22.5px;*/
+    padding: 1.25em;/*22.5 / 18*/
+}
+
+#main-nav ul li{
+    display: inline
+}
+
+#main-nav a{
+    /*padding: 15px;*/
+    padding: 0.8333em;/* 15 / 18*/
+    color: #fff
+}
+
+#content h1{
+    text-align: center
+}
+
+/*Fim layout*/
+
+
+/*Home*/
+
+#home figure{
+    float: left
+}
+
+#home p{
+    line-height: 1.5;
+    float: right;
+    /*width: 400px;*/
+    width: 40.8163%;/*400 / 980*/
+}
+
+/*Portfolio*/
+
+#portfolio figure{
+    float: left;
+    /*max-width: 320px;*/
+    max-width: 33.3333%;/*320 / 960*/
+    /*padding: 10px;*/
+    padding: 0.5555em;/*10 / 18*/
+}
+
+#portfolio img{
+    /*width: 300px;*/
+    width: 93.75%;/*300 / 320*/
+}
+
+/*Sobre*/
+
+#sobre p{
+    display: inline-block;
+    /*width: 450px;*/
+    width: 45.9183%; /*450 / 980*/
+    line-height: 1.5;
+    /*margin: 0 0 30px 30px;*/
+    margin: 0 0 1.6666em 1.6666em;/* 30 / 18*/
+}
+
+/*footer*/
+
+#footer p{
+    text-align: center;
+    /*padding: 30px;*/
+    padding: 1.6666em; /* 30 / 18*/
+}
+
+/*Media Queries*/
+@media screen and (max-width: 868px),(min-width: 1280px){
+    #home header,
+    #home p{
+        clear: both
+    }
+    #home p{
+        width: 100%
+    }
+}
+
+@media screen and (max-width: 480px){
+    #header h1,
+    #header nav{
+        padding: 0;
+        clear: both
+    }
+    #main-nav a{
+        padding: 0.2777em;/* 5 / 18*/
+    }
+    #home figure{
+        display: none
+    }
+    #portfolio figure{
+        max-width: 100%
+    }
+    #sobre p{
+        clear: float;
+        padding: 0
+    }
+}
